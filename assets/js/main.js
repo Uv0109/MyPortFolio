@@ -1,8 +1,6 @@
 
 (function() {
   "use strict";
-
-  
   const select = (el, all = false) => {
     el = el.trim()
     if (all) {
@@ -11,9 +9,6 @@
       return document.querySelector(el)
     }
   }
-
-
-
   const on = (type, el, listener, all = false) => {
     let selectEl = select(el, all)
     if (selectEl) {
@@ -23,15 +18,10 @@
         selectEl.addEventListener(type, listener)
       }
     }
-  }
-
-
-  
+  } 
   const onscroll = (el, listener) => {
     el.addEventListener('scroll', listener)
   }
-
- 
   let navbarlinks = select('#navbar .scrollto', true)
   const navbarlinksActive = () => {
     let position = window.scrollY + 200
@@ -46,7 +36,7 @@
       }
     })
   }
-  window.addEventListener('load', navbarlinksActive)
+   window.addEventListener('load', navbarlinksActive)
   onscroll(document, navbarlinksActive)
 
  
@@ -57,10 +47,7 @@
       top: elementPos,
       behavior: 'smooth'
     })
-  }
-
-
-  
+  } 
   let backtotop = select('.back-to-top')
   if (backtotop) {
     const toggleBacktotop = () => {
